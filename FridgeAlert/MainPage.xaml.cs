@@ -1,24 +1,32 @@
-﻿namespace FridgeAlert
+﻿using FridgeAlert.Views;
+
+namespace FridgeAlert
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void LoginButtonClicked(Object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            bool isUsernameEmpty = string.IsNullOrEmpty(UsernameEntry.Text);
+            bool isLoginEmpty = string.IsNullOrEmpty(UsernameEntry.Text);
+        
+            if (isUsernameEmpty)
+            {
+                UsernameEntry.Placeholder = "Vul username in";
+            }
+            else if (isLoginEmpty)
+            {
+                PasswordEntry.Placeholder = "Vul password in";
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                Navigation.PushAsync(new HomePage());
+            }
+        
         }
     }
 }

@@ -1,41 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FridgeAlert.MainPage">
+             x:Class="FridgeAlert.MainPage"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
 
-    <ScrollView>
         <VerticalStackLayout
-            Spacing="25"
+            Spacing="30"
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <Frame
+                BackgroundColor="#2196D3"
+                Padding="24"
+                CornerRadius="20">
+                <Label 
+                    Text="Fridge Alert"
+                    TextColor="White"
+                    FontSize="32"/>
+            </Frame>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+            <Label 
+                x:Name="UsernameLabel"
+                Text="Username"
+                HorizontalOptions="Center"/>
+            <Entry
+                x:Name="UsernameEntry"
+                Placeholder="Enter your username"
+                HorizontalOptions="Center"/>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <Label 
+                x:Name="PasswordLabel"
+                Text="Password"
+                HorizontalOptions="Center"/>
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder="Enter your password"
+                HorizontalOptions="Center"
+                IsPassword="True"/>
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
+                x:Name="LogInButton"
+                Text="Log in"
+                Margin="0,40,0,0"
+                TextColor="White"
+                HorizontalOptions="Center"
+                BackgroundColor="#2196D3"
+                Clicked="LoginButtonClicked"/>
         </VerticalStackLayout>
-    </ScrollView>
-
+    </StackLayout>
 </ContentPage>
