@@ -5,17 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:FridgeAlert"
     xmlns:views="clr-namespace:FridgeAlert.Views">
+    
+    <FlyoutItem Title="Fridges">
+            <Tab>
 
-    <ShellItem>
-        <ShellContent Title="Home"
+                <ShellContent Title="Login"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-    </ShellItem>
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-    <ShellContent
-        Title="Fridges"
-        ContentTemplate="{DataTemplate views:FridgeList}"
-        Route="FridgeList" />
+        </Tab>
     </FlyoutItem>
 </Shell>

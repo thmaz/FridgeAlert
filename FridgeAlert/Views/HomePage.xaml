@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FridgeAlert.Views.HomePage"
-             Title="HomePage"
-             NavigationPage.HasBackButton="False">
-    <VerticalStackLayout>
-        <Label 
-            Text="gelukt"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="FridgeAlert.Views.HomePage"
+            Title="HomePage"
+            BackgroundColor="DimGray"
+            NavigationPage.HasBackButton="False"
+            xmlns:views="clr-namespace:FridgeAlert.Views">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem
+            x:Name="FridgeGoTo"
+            Text="Fridge"/>
+        <ToolbarItem/>
+    </TabbedPage.ToolbarItems>
+    <views:Guide Title="Guide"/>
+    <views:FridgeList Title="FridgeList"/>
+
+</TabbedPage>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FridgeAlert.Views.Guide"
+             Title="Guide">
+    <VerticalStackLayout Padding="20">
+        <Label 
+            Text="Welcome to Fridge Alert, the perfect app for keeping track of the contents of your fridge!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            MaximumWidthRequest="200"/>
+
+    </VerticalStackLayout>
+</ContentPage>

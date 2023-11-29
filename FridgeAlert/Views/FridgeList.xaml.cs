@@ -6,4 +6,8 @@ public partial class FridgeList : ContentPage
 	{
 		InitializeComponent();
 	}
+    /*private void FridgeList_Clicked
+    {
+
+    }*/
 }
