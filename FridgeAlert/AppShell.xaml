@@ -4,15 +4,24 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:FridgeAlert"
-    xmlns:views="clr-namespace:FridgeAlert.Views">
-    
-    <FlyoutItem Title="Fridges">
-            <Tab>
+    xmlns:views="clr-namespace:FridgeAlert.Views"
+    Shell.FlyoutBehavior="Flyout">
 
-                <ShellContent Title="Login"
+    <ShellContent
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
-        </Tab>
+        Route="MainPage">
+    </ShellContent>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent 
+            Title="Fridges"
+            ContentTemplate="{DataTemplate views:FridgeList}"/>
+        <ShellContent
+            Title="Guide"
+            ContentTemplate="{DataTemplate views:Guide}"/>
+        <ShellContent
+            Title="Home Page"
+            ContentTemplate="{DataTemplate views:HomePage}"
+            Route="HomePage"/>
     </FlyoutItem>
+    
 </Shell>

@@ -7,7 +7,10 @@ namespace FridgeAlert
         {
             InitializeComponent();
             
-            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new MainPage();
+            //MainPage = new NavigationPage(new MainPage());
+            MainPage = new AppShell();
+           
         }
     }
 }

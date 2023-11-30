@@ -9,22 +9,23 @@ namespace FridgeAlert
             InitializeComponent();
         }
 
-        private void LoginButtonClicked(Object sender, EventArgs e)
+        private async void LoginButtonClicked(Object sender, EventArgs e)
         {
             bool isUsernameEmpty = string.IsNullOrEmpty(UsernameEntry.Text);
             bool isLoginEmpty = string.IsNullOrEmpty(UsernameEntry.Text);
         
             if (isUsernameEmpty)
             {
-                UsernameEntry.Placeholder = "Vul username in";
+                UsernameEntry.Placeholder = "You forgot to enter a username!";
             }
             else if (isLoginEmpty)
             {
-                PasswordEntry.Placeholder = "Vul password in";
+                PasswordEntry.Placeholder = "You forgot to enter a password!";
             }
             else
             {
-                Navigation.PushAsync(new HomePage());
+                await Shell.Current.GoToAsync("//HomePage");
+                //Navigation.PushAsync(new HomePage());
             }
         
         }

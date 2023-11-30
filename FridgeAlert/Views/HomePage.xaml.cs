@@ -1,6 +1,6 @@
 namespace FridgeAlert.Views;
 
-public partial class HomePage : TabbedPage
+public partial class HomePage : ContentPage
 {
 	public HomePage()
 	{
