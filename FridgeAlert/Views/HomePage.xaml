@@ -4,7 +4,7 @@
             x:Class="FridgeAlert.Views.HomePage"
             xmlns:views="clr-namespace:FridgeAlert.Views">
     
-    <Label Text="i love karin <3"
+    <Label Text="works"
            BackgroundColor="White"/>
 
 </ContentPage>
