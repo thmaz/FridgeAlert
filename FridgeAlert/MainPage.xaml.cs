@@ -25,7 +25,6 @@ namespace FridgeAlert
             else
             {
                 await Shell.Current.GoToAsync("//HomePage");
-                //Navigation.PushAsync(new HomePage());
             }
         
         }

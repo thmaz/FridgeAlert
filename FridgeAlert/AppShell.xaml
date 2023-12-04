@@ -7,20 +7,20 @@
     xmlns:views="clr-namespace:FridgeAlert.Views"
     Shell.FlyoutBehavior="Flyout">
 
+    <FlyoutItem>
     <ShellContent
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage">
-    </ShellContent>
+        Route="MainPage"/>
+    </FlyoutItem>
     <FlyoutItem 
         Title="Fridges"
-        FlyoutDisplayOptions="AsMultipleItems">
+        FlyoutDisplayOptions="AsMultipleItems"
+        Route="Fridges">
         <ShellContent 
             Title="Fridge List"
             ContentTemplate="{DataTemplate views:FridgeList}"/>
-        <ShellContent
-            Title="Guide"
-            ContentTemplate="{DataTemplate views:Guide}"/>
     </FlyoutItem>
+        
     <FlyoutItem>
         <ShellContent
             Title="Home Page"
