@@ -1,5 +1,4 @@
 using FridgeAlert.ViewModel;
-
 namespace FridgeAlert.Views;
 
 public partial class FridgeList : ContentPage
@@ -9,7 +8,9 @@ public partial class FridgeList : ContentPage
 	{
 		InitializeComponent();
 	    _viewModel = new FridgeViewModel();
+        BindingContext = _viewModel;
     }
+
     private async void AddFridge_Clicked (object sender, EventArgs e)
     {
 

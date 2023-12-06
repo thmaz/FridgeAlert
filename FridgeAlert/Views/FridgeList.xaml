@@ -13,21 +13,19 @@
         <Button
             x:Name="NewFridge"
             ImageSource="AddButton.png"
-            BackgroundColor="#b230ff"
+            BackgroundColor="Gray"
             BorderWidth="4"
-            BorderColor="#7c21b2"
+            BorderColor="DarkSlateGray"
             HeightRequest="50"
             WidthRequest="50"
             Clicked="AddFridge_Clicked"/>
 
         <CollectionView
-            ItemsSource="{Binding Entries}">
+            ItemsSource="{Binding FridgeModels}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <!-- Your entry layout here -->
                     <StackLayout>
-                        <Label Text="{Binding Title}" />
-                        <!-- Add other controls to display other properties of EntryModel -->
+                        <Label Text="{Binding Name}" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
