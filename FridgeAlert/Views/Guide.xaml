@@ -3,12 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FridgeAlert.Views.Guide"
              Title="Guide">
-    <VerticalStackLayout Padding="20">
-        <Label 
-            Text="Welcome to Fridge Alert, the perfect app for keeping track of the contents of your fridge!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            MaximumWidthRequest="200"/>
-
+    <Border
+        Margin="20"
+        Padding="20"
+        Stroke="Black"
+        StrokeThickness="2"
+        StrokeShape="RoundRectangle, 40, 40, 40, 40">
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Padding="20">
+        <Label Text="This page will contain a guide for users on how to use the app"/>
     </VerticalStackLayout>
+    </Border>
 </ContentPage>

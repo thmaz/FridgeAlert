@@ -59,6 +59,9 @@
 	  <MauiXaml Update="Views\FridgeList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\GroceryList.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Guide.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
