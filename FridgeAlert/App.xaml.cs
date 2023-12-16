@@ -1,11 +1,18 @@
-﻿using FridgeAlert.Views;
+﻿using Android.Support.CustomTabs;
+using FridgeAlert.Views;
+using sqlite;
+using System.Security.Cryptography.X509Certificates;
+
 namespace FridgeAlert
 {
     public partial class App : Application
     {
-        public App()
+        public static UserRepository? UserRepo { get; private set; }
+        public App(UserRepository userRepo)
         {
             InitializeComponent();
+
+            UserRepo = userRepo;
             MainPage = new AppShell();
            
         }
