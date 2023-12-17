@@ -16,5 +16,5 @@ public class User
     public string UserName { get; set; }
     [MinLength(12)]
     public string Password { get; set; }
-    public bool SaveLogin { get; set; }
+    public bool? SaveLogin { get; set; }
 }
