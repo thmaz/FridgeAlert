@@ -28,5 +28,10 @@ namespace FridgeAlert
             }
         
         }
+
+        private async void RegisterButtonClicked (Object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Register());
+        }
     }
 }

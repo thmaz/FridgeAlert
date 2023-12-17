@@ -47,6 +47,14 @@
                 HorizontalOptions="Center"
                 BackgroundColor="#2196D3"
                 Clicked="LoginButtonClicked"/>
+            <Button
+                x:Name="ToRegisterButton"
+                Text="Register"
+                Margin="0,40,0,0"
+                TextColor="White"
+                HorizontalOptions="Center"
+                BackgroundColor="#2196D3"
+                Clicked="RegisterButtonClicked"/>
         </VerticalStackLayout>
     </StackLayout>
 </ContentPage>
