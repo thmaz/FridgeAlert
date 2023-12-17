@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FridgeAlert.Helpers;
+using FridgeAlert.Api;
 
 namespace FridgeAlert.Models;
 
@@ -11,6 +11,6 @@ public class Beers
 {
     public static string GenerateUrlRandom()
     {
-        return Constants.RANDOM_BEER;
+        return ApiConstants.RANDOM_BEER;
     }
 }
