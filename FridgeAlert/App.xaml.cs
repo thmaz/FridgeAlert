@@ -1,5 +1,4 @@
-﻿using Android.Support.CustomTabs;
-using FridgeAlert.Views;
+﻿using FridgeAlert.Views;
 using sqlite;
 using System.Security.Cryptography.X509Certificates;
 
