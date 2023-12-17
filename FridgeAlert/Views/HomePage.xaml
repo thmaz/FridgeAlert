@@ -28,6 +28,12 @@
                     Aspect="AspectFit"/>
             
             </Border>
+
+            <Button
+                x:Name="GenerateBeerButton"
+                Text="Click me for a beer suggestion"
+                Clicked="GenerateBeer_Clicked"/>
+
         </VerticalStackLayout>
     </StackLayout>
 </ContentPage>
