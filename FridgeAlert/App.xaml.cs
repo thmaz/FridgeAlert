@@ -1,19 +1,17 @@
-﻿using FridgeAlert.Views;
-using sqlite;
-using System.Security.Cryptography.X509Certificates;
+﻿using sqlite;
 
 namespace FridgeAlert
 {
     public partial class App : Application
     {
-        public static UserRepository? UserRepo { get; private set; }
-        public App(UserRepository userRepo)
+        public static FridgeRepository? FridgeRepo { get; private set; }
+        public App(FridgeRepository fridgeRepository)
         {
             InitializeComponent();
 
-            UserRepo = userRepo;
+            FridgeRepo = fridgeRepository;
             MainPage = new AppShell();
-           
+
         }
     }
 }

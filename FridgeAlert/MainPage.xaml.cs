@@ -13,7 +13,7 @@ namespace FridgeAlert
         {
             bool isUsernameEmpty = string.IsNullOrEmpty(UsernameEntry.Text);
             bool isLoginEmpty = string.IsNullOrEmpty(UsernameEntry.Text);
-        
+
             if (isUsernameEmpty)
             {
                 UsernameEntry.Placeholder = "You forgot to enter a username!";
@@ -26,10 +26,10 @@ namespace FridgeAlert
             {
                 await Shell.Current.GoToAsync("//HomePage");
             }
-        
+
         }
 
-        private async void RegisterButtonClicked (Object sender, EventArgs e)
+        private async void RegisterButtonClicked(Object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Register());
         }

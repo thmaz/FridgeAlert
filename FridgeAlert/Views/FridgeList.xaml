@@ -2,54 +2,40 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FridgeAlert.Views.FridgeList"
-             Title="FridgeList">
+             Title="FridgeList"
+             xmlns:Local="clr-namespace:FridgeAlert.ViewModel">
 
-    <VerticalStackLayout Padding="20">
-        
-        <Button
-            x:Name="NewFridge"
-            Text="Add fridge"
-            Margin="20"
-            BorderColor="Yellow"
-            Clicked="AddFridge_Clicked"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="End"/>
-        
-        <Border
-            Margin="0"
-            Padding="-20"
-            Stroke="#2196D3"
-            StrokeThickness="2"
-            StrokeShape="RoundRectangle, 40, 40, 40, 40">
-            
-        <Label 
-            x:Name="FridgeText"
-            Text="This is your fridge list! 
-            
-            Here you can find the entries you added by pressing 'Add Fridge'"
-            LineBreakMode="WordWrap"
-            Margin="60"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
-        
-        </Border>
-        
-        <CollectionView ItemsSource="{Binding FridgeModels}">
+    <ScrollView>
+        <Grid>
+            <CollectionView
+                Grid.Row="1"
+                ItemsSource="{Binding Fridges}"
+                SelectionMode="Single"
+                SelectedItem="{Binding CurrentFridge}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Horizontal"
-                                 Spacing="20"
-                                 Margin="5">
-                        <Button Text="{Binding Name}" 
-                                    HorizontalOptions="FillAndExpand"
-                                    Clicked="FridgeContents_Clicked"/>
-                        <Button Text="Delete entry"
-                               BackgroundColor="Red"
-                                    WidthRequest="75"
-                                    HorizontalOptions="EndAndExpand"/>
-                    </StackLayout>
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    Text="Delete!"
+                                    BackgroundColor="Red"
+                                    Command="{Binding
+                                    Source={RelativeSource
+                                    AncestorType={x:Type Local:FridgeViewModel}},
+                                    Path=DeleteCommand}"/>
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <Grid
+                            ColumnDefinitions="*,*">
+                                <Label
+                                Text="{Binding Name}"
+                                Grid.Column="0"/>
+                            </Grid>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
 </ContentPage>

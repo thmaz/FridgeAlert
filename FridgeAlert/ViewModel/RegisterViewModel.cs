@@ -1,22 +1,20 @@
-﻿using System.Windows.Input;
-using FridgeAlert.Models;
-using FridgeAlert.ViewModel;
-using Microsoft.Maui.Controls;
+﻿using FridgeAlert.Models;
+using System.Windows.Input;
 
 namespace FridgeAlert.ViewModel
 {
     public class RegisterViewModel
     {
-        public User CurrentUser {  get; set; }
-        public ICommand AddOrUpdateCommand {  get; set; }
+        public User CurrentUser { get; set; }
+        public ICommand AddOrUpdateCommand { get; set; }
 
-        public RegisterViewModel() 
+        public RegisterViewModel()
         {
             CurrentUser = new User();
             AddOrUpdateCommand = new Command(OnAddOrUpdate);
         }
 
-        private void OnAddOrUpdate() 
+        private void OnAddOrUpdate()
         {
             App.UserRepo.AddOrUpdate(CurrentUser);
         }

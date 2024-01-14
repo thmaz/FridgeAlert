@@ -1,9 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
+/* Unmerged change from project 'FridgeAlert (net7.0-windows10.0.19041.0)'
+Before:
+using System;
+After:
+using FridgeAlert.Models;
+using System;
+*/
+
+/* Unmerged change from project 'FridgeAlert (net7.0-ios)'
+Before:
+using System;
+After:
+using FridgeAlert.Models;
+using System;
+*/
+
+/* Unmerged change from project 'FridgeAlert (net7.0-maccatalyst)'
+Before:
+using System;
+After:
+using FridgeAlert.Models;
+using System;
+*/
+using
+/* Unmerged change from project 'FridgeAlert (net7.0-windows10.0.19041.0)'
+Before:
 using System.Threading.Tasks;
 using FridgeAlert.Models;
+After:
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'FridgeAlert (net7.0-ios)'
+Before:
+using System.Threading.Tasks;
+using FridgeAlert.Models;
+After:
+using System.Threading.Tasks;
+*/
+
+/* Unmerged change from project 'FridgeAlert (net7.0-maccatalyst)'
+Before:
+using System.Threading.Tasks;
+using FridgeAlert.Models;
+After:
+using System.Threading.Tasks;
+*/
+FridgeAlert.Models;
 
 namespace FridgeAlert.Api
 {

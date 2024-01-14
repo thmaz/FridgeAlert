@@ -4,32 +4,32 @@ using SQLite;
 
 namespace sqlite
 {
-    public class UserRepository
+    public class FridgeRepository
     {
         SQLiteConnection connection;
         public string? StatusMessage { get; set; }
 
-        public UserRepository()
+        public FridgeRepository()
         {
             connection = new SQLiteConnection(
                 Constants.DatabasePath,
                 Constants.flags);
-            connection.CreateTable<User>();
+            connection.CreateTable<Fridges>();
         }
 
-        public void AddOrUpdate(User User)
+        public void AddOrUpdate(Fridges fridges)
         {
             int result = 0;
             try
             {
-                if (User.Id != 0)
+                if (fridges.Id != 0)
                 {
-                    result = connection.Update(User);
+                    result = connection.Update(fridges);
                     StatusMessage = $"{result} Rows updated";
                 }
                 else
                 {
-                    result = connection.Insert(User);
+                    result = connection.Insert(fridges);
                     StatusMessage = $"{result} Rows(s) added";
 
                 }
@@ -40,11 +40,11 @@ namespace sqlite
             }
         }
 
-        public List<User> GetAll()
+        public List<Fridges> GetAll()
         {
             try
             {
-                return connection.Table<User>().ToList();
+                return connection.Table<Fridges>().ToList();
             }
             catch (Exception ex)
             {
@@ -53,11 +53,11 @@ namespace sqlite
             return null;
         }
 
-        public User? Get(int id)
+        public Fridges? Get(int id)
         {
             try
             {
-                return connection.Table<User>().FirstOrDefault(x => x.Id == id);
+                return connection.Table<Fridges>().FirstOrDefault(x => x.Id == id);
             }
             catch (Exception ex)
             {
@@ -66,12 +66,12 @@ namespace sqlite
             return null;
         }
 
-        public void Delete(int UserId)
+        public void Delete(int fridgeId)
         {
             try
             {
-                User User = Get(UserId);
-                connection.Delete(User);
+                Fridges fridges = Get(fridgeId);
+                connection.Delete(fridges);
 
             }
             catch (Exception ex)

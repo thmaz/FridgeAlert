@@ -16,10 +16,10 @@ namespace FridgeAlert
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddSingleton<UserRepository>();
+            builder.Services.AddSingleton<FridgeRepository>();
 
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

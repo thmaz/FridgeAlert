@@ -1,13 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+/* Unmerged change from project 'FridgeAlert (net7.0-windows10.0.19041.0)'
+Before:
+using System;
+After:
+using SQLite;
+using System;
+*/
+
+/* Unmerged change from project 'FridgeAlert (net7.0-ios)'
+Before:
+using System;
+After:
+using SQLite;
+using System;
+*/
+
+/* Unmerged change from project 'FridgeAlert (net7.0-maccatalyst)'
+Before:
+using System;
+After:
+using SQLite;
+using System;
+*/
+using SQLite;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/* Unmerged change from project 'FridgeAlert (net7.0-windows10.0.19041.0)'
+Before:
 using SQLite;
 namespace FridgeAlert.Models;
+After:
+namespace FridgeAlert.Models;
+*/
 
-    [Table("UserData")]
+/* Unmerged change from project 'FridgeAlert (net7.0-ios)'
+Before:
+using SQLite;
+namespace FridgeAlert.Models;
+After:
+namespace FridgeAlert.Models;
+*/
+
+/* Unmerged change from project 'FridgeAlert (net7.0-maccatalyst)'
+Before:
+using SQLite;
+namespace FridgeAlert.Models;
+After:
+namespace FridgeAlert.Models;
+*/
+namespace FridgeAlert.Models;
+
+[Table("UserData")]
 public class User
 {
     [PrimaryKey, AutoIncrement]
