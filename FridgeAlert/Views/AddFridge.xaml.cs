@@ -1,13 +1,18 @@
 using FridgeAlert.ViewModel;
-namespace FridgeAlert.Views;
+using FridgeAlert.Models;
 
-public partial class AddFridge : ContentPage
+namespace FridgeAlert.Views
 {
-    public FridgeViewModel _viewModel;
-    public AddFridge(FridgeViewModel viewModel)
+
+    public partial class AddFridge : ContentPage
     {
-        InitializeComponent();
-        _viewModel = viewModel;
-        BindingContext = _viewModel;
+        public FridgeViewModel _viewModel;
+        public AddFridge(FridgeViewModel viewModel)
+        {
+            InitializeComponent();
+            _viewModel = viewModel;
+            _viewModel.CurrentFridge = new Fridges();
+            BindingContext = _viewModel;
+        }
     }
 }

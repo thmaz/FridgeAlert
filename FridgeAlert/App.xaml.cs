@@ -9,7 +9,6 @@ namespace FridgeAlert
         public App(BaseRepository<Fridges> fridgeRepo)
         {
             InitializeComponent();
-
             FridgeRepo = fridgeRepo;
             MainPage = new AppShell();
 

@@ -61,30 +61,14 @@ namespace FridgeAlert.Data
 
         public void SaveEntityWithChildren(T? entity, bool recursive = false)
         {
-            connection.InsertWithChildren(entity, recursive);
-            /*
-            int result = 0;
-            if (entity != null) 
-            { 
-                try
-                {
-                    if (entity.Id != 0)
-                    {
-                        result = connection.Update(entity);
-                        StatusMessage = $"{result} Rows updated";
-                    }
-                    else
-                    {
-                        result = connection.Insert(entity);
-                        StatusMessage = $"{result} Rows(s) added";
-                    }
-                }   
-                catch (Exception ex)
-                {
-                    StatusMessage = $"Error: {ex.Message}";
-                }
-            }*/   
+            try
+            {
+                connection.InsertWithChildren(entity, recursive);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }   
         }
     }
-    
 }

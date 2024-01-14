@@ -62,9 +62,6 @@
 	  <MauiXaml Update="Views\AddFridge.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\FridgeContent.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\FridgeList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

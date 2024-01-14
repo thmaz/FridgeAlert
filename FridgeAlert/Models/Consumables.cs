@@ -1,11 +1,18 @@
-﻿namespace FridgeAlert.Models
+﻿using FridgeAlert.Data;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
+
+namespace FridgeAlert.Models
 {
-    class Consumables
+    [Table("Consumables")]
+    public class Consumables : TableData
     {
-        public int Id { get; set; }
+        [Column("name"), Indexed, NotNull]
         public string Name { get; set; }
-        public DateTime ExpiresOn { get; set; }
+        public DateTime? ExpiresOn { get; set; }
         public bool IsDrink { get; set; }
         public bool IsFood { get; set; }
+        [ForeignKey(typeof(Fridges))]
+        public int FridgeId { get; set; }
     }
 }

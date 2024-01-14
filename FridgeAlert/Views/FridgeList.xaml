@@ -8,16 +8,15 @@
     <ScrollView>
         <Grid
             RowDefinitions=".2*, .8*">
-            <VerticalStackLayout
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
-                <Entry
-                    x:Name="Name"
-                    Text="{Binding CurrentFridge.Name}"/>
-                <Button 
-                    Text="Add or Update"
-                    x:Name="AddUpdate"
-                    Command="{Binding AddOrUpdateCommand}"/>
+            <VerticalStackLayout>
+                <Button
+            x:Name="NewFridge"
+            Text="Add fridge"
+            Margin="20"
+            BorderColor="Yellow"
+            Clicked="AddFridge_Clicked"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="End"/>
             </VerticalStackLayout>
             <CollectionView
                 Grid.Row="1"
