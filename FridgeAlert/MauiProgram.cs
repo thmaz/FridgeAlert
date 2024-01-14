@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using FridgeAlert.Data;
+using FridgeAlert.Models;
+using Microsoft.Extensions.Logging;
 using sqlite;
 
 namespace FridgeAlert
@@ -16,7 +18,7 @@ namespace FridgeAlert
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.AddSingleton<FridgeRepository>();
+            builder.Services.AddSingleton<BaseRepository<Fridges>>();
 
 #if DEBUG
             builder.Logging.AddDebug();

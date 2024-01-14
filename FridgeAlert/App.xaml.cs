@@ -1,15 +1,16 @@
-﻿using sqlite;
+﻿using FridgeAlert.Models;
+using FridgeAlert.Data;
 
 namespace FridgeAlert
 {
     public partial class App : Application
     {
-        public static FridgeRepository? FridgeRepo { get; private set; }
-        public App(FridgeRepository fridgeRepository)
+        public static BaseRepository<Fridges>? FridgeRepo { get; private set; }
+        public App(BaseRepository<Fridges> fridgeRepo)
         {
             InitializeComponent();
 
-            FridgeRepo = fridgeRepository;
+            FridgeRepo = fridgeRepo;
             MainPage = new AppShell();
 
         }

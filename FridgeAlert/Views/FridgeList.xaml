@@ -6,7 +6,19 @@
              xmlns:Local="clr-namespace:FridgeAlert.ViewModel">
 
     <ScrollView>
-        <Grid>
+        <Grid
+            RowDefinitions=".2*, .8*">
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Entry
+                    x:Name="Name"
+                    Text="{Binding CurrentFridge.Name}"/>
+                <Button 
+                    Text="Add or Update"
+                    x:Name="AddUpdate"
+                    Command="{Binding AddOrUpdateCommand}"/>
+            </VerticalStackLayout>
             <CollectionView
                 Grid.Row="1"
                 ItemsSource="{Binding Fridges}"

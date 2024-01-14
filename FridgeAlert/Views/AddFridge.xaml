@@ -4,17 +4,8 @@
              x:Class="FridgeAlert.Views.AddFridge"
              xmlns:views="clr-namespace:FridgeAlert.Views"
              xmlns:local="clr-namespace:FridgeAlert.ViewModel">
-    
+
     <VerticalStackLayout>
-
-        <Entry
-            x:Name="Name"
-            Text="{Binding CurrentFridge.Name}"/>
-
-        <Button 
-            Text="Add or Update"
-            x:Name="AddUpdate"
-            Command="{Binding AddOrUpdateCommand}"/>
 
     </VerticalStackLayout>
 </ContentPage>

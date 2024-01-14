@@ -19,26 +19,8 @@
                     TextColor="White"
                     FontSize="32"/>
             </Frame>
-
-            <Label 
-                x:Name="UsernameLabel"
-                Text="Username"
-                HorizontalOptions="Center"/>
-            <Entry
-                x:Name="UsernameEntry"
-                Placeholder="Enter your username"
-                HorizontalOptions="Center"/>
-
-            <Label 
-                x:Name="PasswordLabel"
-                Text="Password"
-                HorizontalOptions="Center"/>
-            <Entry
-                x:Name="PasswordEntry"
-                Placeholder="Enter your password"
-                HorizontalOptions="Center"
-                IsPassword="True"/>
-
+            <Label
+                Text="Welcome to Fridge Alert! Proceed by clicking the button below :)"/>
             <Button
                 x:Name="LogInButton"
                 Text="Log in"
@@ -47,14 +29,6 @@
                 HorizontalOptions="Center"
                 BackgroundColor="#2196D3"
                 Clicked="LoginButtonClicked"/>
-            <Button
-                x:Name="ToRegisterButton"
-                Text="Register"
-                Margin="0,40,0,0"
-                TextColor="White"
-                HorizontalOptions="Center"
-                BackgroundColor="#2196D3"
-                Clicked="RegisterButtonClicked"/>
         </VerticalStackLayout>
     </StackLayout>
 </ContentPage>

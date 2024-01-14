@@ -1,9 +1,15 @@
-﻿namespace FridgeAlert.Models
+﻿using FridgeAlert.Data;
+using SQLite;
+
+namespace FridgeAlert.Models
 {
-    class Groceries
+    [Table("Groceries")]
+    public class Groceries : TableData
     {
-        public int Id { get; set; }
+        [Column("name"), Indexed, NotNull]
         public string Name { get; set; }
+
+        public int Amount { get; set; }
 
     }
 }

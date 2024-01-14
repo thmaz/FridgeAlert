@@ -1,13 +1,12 @@
-﻿using SQLite;
+﻿using FridgeAlert.Data;
+using SQLite;
 
 namespace FridgeAlert.Models
 {
     [Table("Fridges")]
-    public class Fridges
+    public class Fridges : TableData
     {
-        [PrimaryKey]
-        public int Id { get; set; }
-        [Column("name"), Indexed]
+        [Column("name"), Indexed, NotNull]
         public string Name { get; set; }
     }
 }

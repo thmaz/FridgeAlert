@@ -14,10 +14,12 @@ namespace FridgeAlert.ViewModel
 
         public MainPageViewModel()
         {
+            /*
             AddOrUpdateCommand = new Command(async =>
             {
                 App.UserRepo.AddOrUpdate(CurrentUser);
             });
+            */
         }
     }
 
