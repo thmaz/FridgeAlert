@@ -11,21 +11,20 @@
         <VerticalStackLayout 
             Padding="20"
             Grid.Row="0">
-        <Label 
-            Text="This page will display the groceries you still need to do (to be implemented)"
-            Margin="60"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            MaximumWidthRequest="200"/>
-    </VerticalStackLayout>
-
-        <Button
-            x:Name="AddGrocerieListButton"
-            Grid.Row="1"
-            Text="New List"
-            Margin="20"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="End"/>
-
+            <Label 
+                Text="You can do your groceries inside this app! How convenient ;)"
+                Margin="60"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                MaximumWidthRequest="200"/>
+            <Button
+                x:Name="GenerateBeerButton"
+                Text="Click me for a beer suggestion"
+                Clicked="GenerateBeerButton_Clicked" />
+            <WebView x:Name="GroceryWebView"
+                     Grid.Row="1" 
+                     HeightRequest="500"
+                     Source="https://www.ah.nl/" />
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>
