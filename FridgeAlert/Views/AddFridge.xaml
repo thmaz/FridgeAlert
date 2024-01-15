@@ -14,24 +14,17 @@
         <Entry
             Placeholder="Name"
             Text="{Binding CurrentFridge.Name}"/>
-
         <Label Text="Amount"/>
-        <!-- Use a Picker for the amount selection -->
         <Picker
             Title="Select Amount"
             ItemsSource="{Binding AmountOptions}"
             SelectedItem="{Binding SelectedAmount}" />
-
         <Label Text="Purchase Date"/>
-        <!-- Use a DatePicker for selecting the purchase date -->
         <DatePicker
             Date="{Binding SelectedPurchaseDate}" />
-
         <Label Text="Is it a drink?"/>
-        <!-- Use a Switch for determining if it's a drink or not -->
         <Switch
             IsToggled="{Binding IsDrink}" />
-
         <Button 
             Text="Add or Update"
             Command="{Binding AddOrUpdateCommand}"/>

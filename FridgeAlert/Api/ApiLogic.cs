@@ -1,52 +1,6 @@
-﻿
-/* Unmerged change from project 'FridgeAlert (net7.0-windows10.0.19041.0)'
-Before:
-using System;
-After:
+﻿using System.Net.Http;
+using System.Text.Json;
 using FridgeAlert.Models;
-using System;
-*/
-
-/* Unmerged change from project 'FridgeAlert (net7.0-ios)'
-Before:
-using System;
-After:
-using FridgeAlert.Models;
-using System;
-*/
-
-/* Unmerged change from project 'FridgeAlert (net7.0-maccatalyst)'
-Before:
-using System;
-After:
-using FridgeAlert.Models;
-using System;
-*/
-using
-/* Unmerged change from project 'FridgeAlert (net7.0-windows10.0.19041.0)'
-Before:
-using System.Threading.Tasks;
-using FridgeAlert.Models;
-After:
-using System.Threading.Tasks;
-*/
-
-/* Unmerged change from project 'FridgeAlert (net7.0-ios)'
-Before:
-using System.Threading.Tasks;
-using FridgeAlert.Models;
-After:
-using System.Threading.Tasks;
-*/
-
-/* Unmerged change from project 'FridgeAlert (net7.0-maccatalyst)'
-Before:
-using System.Threading.Tasks;
-using FridgeAlert.Models;
-After:
-using System.Threading.Tasks;
-*/
-FridgeAlert.Models;
 
 namespace FridgeAlert.Api
 {
@@ -61,7 +15,24 @@ namespace FridgeAlert.Api
             using (HttpClient client = new HttpClient())
             {
                 var response = await client.GetAsync(url);
-                var json = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var beerArray = JsonSerializer.Deserialize<List<Beers>>(json);
+
+                    foreach (var beer in beerArray)
+                    {
+                        // Add only the desired properties to the list
+                        beers.Add(new Beers
+                        {
+                            name = beer.name,
+                            description = beer.description,
+                            image_url = beer.image_url,
+                            abv = beer.abv
+                        });
+                    }
+                }
             }
 
             return beers;

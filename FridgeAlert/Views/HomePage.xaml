@@ -20,19 +20,18 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="#fcff33">
-                
+
                 <Image 
                     Source="homepagelogo_3.png"
                     HeightRequest="100"
                     WidthRequest="100"
                     Aspect="AspectFit"/>
-            
-            </Border>
 
+            </Border>
             <Button
-                x:Name="GenerateBeerButton"
-                Text="Click me for a beer suggestion"
-                />
+            x:Name="GenerateBeerButton"
+            Text="Click me for a beer suggestion"
+            Clicked="GenerateBeerButton_Clicked" />
         </VerticalStackLayout>
     </StackLayout>
 </ContentPage>

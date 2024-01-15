@@ -35,6 +35,7 @@ namespace FridgeAlert.ViewModel
                 App.FridgeRepo.SaveEntityWithChildren(CurrentFridge);
                 Console.WriteLine(App.FridgeRepo.StatusMessage);
                 Refresh();
+                await Application.Current.MainPage.Navigation.PopAsync();
             });
 
             DeleteCommand = new Command(async () =>

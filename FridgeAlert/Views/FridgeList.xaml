@@ -10,42 +10,54 @@
             RowDefinitions=".2*, .8*">
             <VerticalStackLayout>
                 <Button
-            x:Name="NewFridge"
-            Text="Add fridge"
-            Margin="20"
-            BorderColor="Yellow"
-            Clicked="AddFridge_Clicked"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="End"/>
+                    x:Name="NewFridge"
+                    Text="Add fridge"
+                    Margin="20"
+                    BorderColor="Yellow"
+                    Clicked="AddFridge_Clicked"
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="End"/>
             </VerticalStackLayout>
             <CollectionView
                 Grid.Row="1"
                 ItemsSource="{Binding Fridges}"
                 SelectionMode="Single"
                 SelectedItem="{Binding CurrentFridge}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <SwipeView>
-                        <SwipeView.LeftItems>
-                            <SwipeItems>
-                                <SwipeItem
-                                    Text="Delete!"
-                                    BackgroundColor="Red"
-                                    Command="{Binding
-                                    Source={RelativeSource
-                                    AncestorType={x:Type Local:FridgeViewModel}},
-                                    Path=DeleteCommand}"/>
-                            </SwipeItems>
-                        </SwipeView.LeftItems>
-                        <Grid
-                            ColumnDefinitions="*,*">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItem
+                                        Text="Delete!"
+                                        BackgroundColor="Red"
+                                        Command="{Binding
+                                        Source={RelativeSource
+                                        AncestorType={x:Type Local:FridgeViewModel}},
+                                        Path=DeleteCommand}"/>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <Grid
+                                ColumnDefinitions="*,*">
                                 <Label
-                                Text="{Binding Name}"
-                                Grid.Column="0"/>
+                                    Text="{Binding Name}"
+                                    FontSize="Large"
+                                    Grid.Column="0"/>
+                                    <StackLayout 
+                                        Grid.Column="1" 
+                                        VerticalOptions="CenterAndExpand"
+                                        BackgroundColor="LightGray">
+                                        <Label 
+                                            Text="{Binding Amount, StringFormat='Amount: {0}'}" />
+                                        <Label 
+                                            Text="{Binding PurchaseDate, StringFormat='Purchase Date: {0}'}" />
+                                        <Label 
+                                            Text="{Binding isDrink, StringFormat='Is Drink: {0}'}" />
+                                </StackLayout>
                             </Grid>
-                    </SwipeView>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
     </ScrollView>

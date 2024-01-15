@@ -2,5 +2,5 @@
 
 public class ApiConstants
 {
-    public const string RANDOM_BEER = "https://api.punkapi.com/v2/beers/random/";
+    public const string RANDOM_BEER = "https://api.punkapi.com/v2/beers/random";
 }
