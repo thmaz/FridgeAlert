@@ -2,24 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FridgeAlert.Views.AddFridge"
-             xmlns:views="clr-namespace:FridgeAlert.Views">
-    
-    <VerticalStackLayout>
+             xmlns:views="clr-namespace:FridgeAlert.Views"
+             xmlns:local="clr-namespace:FridgeAlert.ViewModel">
 
-        <Label 
-                x:Name="AddFridgeLabel"
-                Text="New fridge"
-                HorizontalOptions="Center"/>
+    <ContentPage.BindingContext>
+        <local:FridgeViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout
+        Padding="20">
         <Entry
-                x:Name="EntryName"
-                Placeholder="Enter your fridge name"
-                HorizontalOptions="Center"/>
+            Placeholder="Name"
+            Text="{Binding CurrentFridge.Name}"/>
+        <Label Text="Amount"/>
+        <Picker
+            Title="Select Amount"
+            ItemsSource="{Binding AmountOptions}"
+            SelectedItem="{Binding SelectedAmount}" />
+        <Label Text="Purchase Date"/>
+        <DatePicker
+            Date="{Binding SelectedPurchaseDate}" />
+        <Label Text="Is it a drink?"/>
+        <Switch
+            IsToggled="{Binding IsDrink}" />
+        <Button 
+            Text="Add or Update"
+            Command="{Binding AddOrUpdateCommand}"/>
+    </StackLayout>
 
-        <Button
-            x:Name="AddFridgeButton"
-            Text="Save"
-            HorizontalOptions="Center"
-            Clicked="AddFridgeButton_Clicked"/>
-        
-    </VerticalStackLayout>
 </ContentPage>

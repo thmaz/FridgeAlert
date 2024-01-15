@@ -2,54 +2,63 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FridgeAlert.Views.FridgeList"
-             Title="FridgeList">
+             Title="FridgeList"
+             xmlns:Local="clr-namespace:FridgeAlert.ViewModel">
 
-    <VerticalStackLayout Padding="20">
-        
-        <Button
-            x:Name="NewFridge"
-            Text="Add fridge"
-            Margin="20"
-            BorderColor="Yellow"
-            Clicked="AddFridge_Clicked"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="End"/>
-        
-        <Border
-            Margin="0"
-            Padding="-20"
-            Stroke="#2196D3"
-            StrokeThickness="2"
-            StrokeShape="RoundRectangle, 40, 40, 40, 40">
-            
-        <Label 
-            x:Name="FridgeText"
-            Text="This is your fridge list! 
-            
-            Here you can find the entries you added by pressing 'Add Fridge'"
-            LineBreakMode="WordWrap"
-            Margin="60"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
-        
-        </Border>
-        
-        <CollectionView ItemsSource="{Binding FridgeModels}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Orientation="Horizontal"
-                                 Spacing="20"
-                                 Margin="5">
-                        <Button Text="{Binding Name}" 
-                                    HorizontalOptions="FillAndExpand"
-                                    Clicked="FridgeContents_Clicked"/>
-                        <Button Text="Delete entry"
-                               BackgroundColor="Red"
-                                    WidthRequest="75"
-                                    HorizontalOptions="EndAndExpand"/>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+    <ScrollView>
+        <Grid
+            RowDefinitions=".2*, .8*">
+            <VerticalStackLayout>
+                <Button
+                    x:Name="NewFridge"
+                    Text="Add fridge"
+                    Margin="20"
+                    BorderColor="Yellow"
+                    Clicked="AddFridge_Clicked"
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="End"/>
+            </VerticalStackLayout>
+            <CollectionView
+                Grid.Row="1"
+                ItemsSource="{Binding Fridges}"
+                SelectionMode="Single"
+                SelectedItem="{Binding CurrentFridge}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItem
+                                        Text="Delete!"
+                                        BackgroundColor="Red"
+                                        Command="{Binding
+                                        Source={RelativeSource
+                                        AncestorType={x:Type Local:FridgeViewModel}},
+                                        Path=DeleteCommand}"/>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <Grid
+                                ColumnDefinitions="*,*">
+                                <Label
+                                    Text="{Binding Name}"
+                                    FontSize="Large"
+                                    Grid.Column="0"/>
+                                    <StackLayout 
+                                        Grid.Column="1" 
+                                        VerticalOptions="CenterAndExpand"
+                                        BackgroundColor="LightGray">
+                                        <Label 
+                                            Text="{Binding Amount, StringFormat='Amount: {0}'}" />
+                                        <Label 
+                                            Text="{Binding PurchaseDate, StringFormat='Purchase Date: {0}'}" />
+                                        <Label 
+                                            Text="{Binding isDrink, StringFormat='Is Drink: {0}'}" />
+                                </StackLayout>
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
 </ContentPage>
