@@ -1,4 +1,6 @@
 using FridgeAlert.ViewModel;
+using System.ComponentModel;
+
 namespace FridgeAlert.Views;
 
 public partial class FridgeList : ContentPage

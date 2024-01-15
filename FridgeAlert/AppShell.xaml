@@ -13,13 +13,6 @@
             Route="MainPage"/>
     </FlyoutItem>
     
-    <FlyoutItem 
-        Title="Fridges"
-        Route="Fridges">
-        <ShellContent 
-            ContentTemplate="{DataTemplate views:FridgeList}"/>
-    </FlyoutItem>
-    
     <FlyoutItem
         Title="Home Page">
         <ShellContent
@@ -27,6 +20,13 @@
             Route="HomePage"/>
     </FlyoutItem>
     
+    <FlyoutItem 
+        Title="Fridges"
+        Route="Fridges">
+        <ShellContent 
+            ContentTemplate="{DataTemplate views:FridgeList}"/>
+    </FlyoutItem>
+
     <FlyoutItem
         Title="Groceries">
         <ShellContent
